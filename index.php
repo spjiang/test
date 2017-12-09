@@ -3,11 +3,15 @@ define('BASEDIR', __DIR__);
 include BASEDIR . '/IMooc/Loader.php';
 spl_autoload_register('\\IMooc\\Loader::autoload');
 
+
+//工厂模式
+/*$db =  \IMooc\Factory::createDatabase();*/
+
 // 模式方法
-$obj = new IMooc\Object();
+/*$obj = new IMooc\Object();
 //$obj->test('spjiang');
 //IMooc\Object::test('hello1',1234);
-echo $obj('spjiang');
+echo $obj('spjiang');*/
 
 // 链式操作
 /*$db = new IMooc\Database();
