@@ -3,6 +3,8 @@ define('BASEDIR', __DIR__);
 include BASEDIR . '/IMooc/Loader.php';
 spl_autoload_register('\\IMooc\\Loader::autoload');
 
+// 注册模式
+$db = \IMooc\Register::get('db1');
 
 // 单利模式
 /*$db = \IMooc\Database::getInstance();*/

@@ -7,6 +7,7 @@ namespace IMooc;
 class Factory{
     static function createDatabase(){
         $db = Database::getInstance();
+        Register::set('db1',$db);
         return $db;
     }
 }
