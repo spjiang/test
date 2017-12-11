@@ -4,6 +4,9 @@ include BASEDIR . '/IMooc/Loader.php';
 spl_autoload_register('\\IMooc\\Loader::autoload');
 
 
+// 单利模式
+/*$db = \IMooc\Database::getInstance();*/
+
 //工厂模式
 /*$db =  \IMooc\Factory::createDatabase();*/
 
