@@ -1,9 +1,128 @@
 <?php
+
 define('BASEDIR', __DIR__);
 include BASEDIR . '/IMooc/Loader.php';
 spl_autoload_register('\\IMooc\\Loader::autoload');
 
-//
+
+// 策略模式
+/*class Page
+{
+    protected $strategey;
+    
+    function index()
+    {
+        echo 'AD';
+        $this->strategey->showAd();
+        echo '<BR />';
+        echo 'Category';
+        $this->strategey->showCategory();
+    }
+    
+    function setStrategy(\IMooc\UserStrategy $strategy)
+    {
+        $this->strategey = $strategy;
+    }
+}
+
+$page = new Page();
+if (isset($_GET['female'])) {
+    $strategy = new \IMooc\FemaleUserStrategy();
+} else {
+    $strategy = new \IMooc\MaleUserStrategy();
+}
+$page->setStrategy($strategy);
+$page->index();*/
+
+
+/*function printer() {
+    $i = 0;
+    while(true) {
+        echo 'this is the yield ' . (yield $i) . "\n";
+        $i++;
+    }
+}
+
+$printer = printer();
+var_dump($printer->send('first'));
+var_dump($printer->send('second'));*/
+
+
+/*function xrange($start, $limit, $step = 1) {
+    for ($i = $start, $j = 0; $i <= $limit; $i += $step, $j++) {
+        // 给予键值
+        yield $j => $i;
+    }
+}
+$xrange = xrange(1, 10, 2);
+foreach ($xrange as $key => $value) {
+    echo $key . ' => ' . $value . "\n";
+}*/
+
+
+// 遍历对象，迭代器
+/*class MyIterator implements Iterator {
+    private $position = 0;
+    private $arr = [
+        'first', 'second', 'third',
+    ];
+    
+    public function __construct() {
+        $this->position = 0;
+    }
+    
+    public function rewind() {
+        var_dump(__METHOD__);
+        $this->position = 0;
+    }
+    
+    public function current() {
+        var_dump(__METHOD__);
+        return $this->arr[$this->position];
+    }
+    
+    public function key() {
+        var_dump(__METHOD__);
+        return $this->position;
+    }
+    
+    public function next() {
+        var_dump(__METHOD__);
+        ++$this->position;
+    }
+    
+    public function valid() {
+        var_dump(__METHOD__);
+        return isset($this->arr[$this->position]);
+    }
+    
+}
+
+$it = new MyIterator();
+
+foreach($it as $key => $value) {
+    echo "\n";
+    var_dump($key, $value);
+}*/
+
+
+// 电话号码中间4位
+/*echo substr_replace('18580119882','****',3,4);*/
+
+// 判断字符串长度
+/*$foo = 'abcde';
+var_dump($foo{0});
+die;
+if (strlen($foo) < 5) { echo "Foo is too short"; }
+if (!isset($foo{5})) { echo "Foo is too short"; }
+die();*/
+
+/**
+ * 策略模式
+ * 1、策略模式，将一组特定的行为和算法封装成类，以适应某些特定的上下文环境，这种模式就是策略模式
+ * 2、实际应用举例，假如一个电商网站系统，针对男性女性用户要各自跳转到不同的商品类目，并且所有广告位展示不同的广告
+ *
+ */
 
 // 适配器模式
 /*$db = new IMooc\Database\MySQL();
