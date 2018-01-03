@@ -3,8 +3,25 @@
 define('BASEDIR', __DIR__);
 include BASEDIR . '/IMooc/Loader.php';
 spl_autoload_register('\\IMooc\\Loader::autoload');
+$config = array(
+    'db' => array(
+        'host' => '127.0.0.1',
+        'user' => 'root',
+        'passwd' => '',
+        'dbname' => 'test',
+        'port' => '3306',
+        'type'=>'MySQLi',
+    ),
+);
+
+\IMooc\Config::set($config);
+\IMooc\Db::name('test');
 
 
+/*$db = new \IMooc\Database\MySQLi();
+$db->connect('127.0.0.1', 'root', '', 'test');
+$rs = $db->query('show databases;');
+$db->close();*/
 // 策略模式
 /*class Page
 {

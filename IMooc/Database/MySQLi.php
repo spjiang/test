@@ -7,12 +7,18 @@
 namespace IMooc\DataBase;
 
 use IMooc\IDatabase;
-use IMooc\Database;
 
 class MySQLi implements IDatabase
 {
-    protected $conn;
+    static $db;
     
+    static function getInstance()
+    {
+        if (self::$db) {
+            return self::$db;
+        }
+        return self::$db = new self();
+    }
     function connect($host, $user, $passwd, $dbname)
     {
         $this->conn = mysqli_connect($host, $user, $passwd, $dbname);
@@ -20,11 +26,13 @@ class MySQLi implements IDatabase
     
     function query($sql)
     {
-        return mysqli_query($sql, $this->conn);
+        return mysqli_query($this->conn, $sql);
     }
     
     function close()
     {
         mysqli_close($this->conn);
     }
+    
+    
 }
