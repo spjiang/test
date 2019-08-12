@@ -17,6 +17,7 @@ if(1==1 && 3==3){
     echo "ccc";
     echo "ccc";
     echo "ccc";
+    echo "bbb";
 }
 
 \IMooc\Config::set($config);
