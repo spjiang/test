@@ -13,9 +13,12 @@ $config = array(
         'type'=>'MySQLi',
     ),
 );
-echo "ccc";
-echo "ccc";
-echo "ccc";
+if(1==1){
+    echo "ccc";
+    echo "ccc";
+    echo "ccc";
+}
+
 \IMooc\Config::set($config);
 \IMooc\Db::name('test');
 
