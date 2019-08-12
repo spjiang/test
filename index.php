@@ -13,6 +13,7 @@ $config = array(
         'type'=>'MySQLi',
     ),
 );
+echo "ccc";
 if(1==1 && 2==2){
     echo "ccc";
     echo "ccc";
